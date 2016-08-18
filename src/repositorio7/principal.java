@@ -48,13 +48,16 @@ public class principal extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("BONO DE AÑOS POR ANTIGUEDAD");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 210, 40));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("NUMERO DE AÑOS EN LA EMPRESA: ");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 200, 30));
-        jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 180, 30));
+        jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 180, 30));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("SU BONO A PAGAR ES DE :");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 144, 180, 30));
         jPanel2.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 30));
