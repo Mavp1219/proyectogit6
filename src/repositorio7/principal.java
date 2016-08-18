@@ -60,7 +60,7 @@ public class principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("SU BONO A PAGAR ES DE :");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 144, 180, 30));
-        jPanel2.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 30));
+        jPanel2.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 190, 30));
 
         jButton1.setText("CALCULAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
