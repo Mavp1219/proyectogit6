@@ -5,6 +5,8 @@
  */
 package repositorio7;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -55,6 +57,12 @@ public class principal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("NUMERO DE AÑOS EN LA EMPRESA: ");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 200, 30));
+
+        txtvalor1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtvalor1KeyTyped(evt);
+            }
+        });
         jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 180, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -85,22 +93,41 @@ public class principal extends javax.swing.JFrame {
 
     private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
         double v1, op;
-        
-        v1 = Double.parseDouble(txtvalor1.getText());
-        
-        op = ((v1 -1) * 120000) + 100000;
-        
-        txtresultado.setText(String.valueOf(op));
-        
+        if (txtvalor1.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite el numero de años en la empresa", "Error", JOptionPane.ERROR_MESSAGE);
+            txtvalor1.requestFocusInWindow();
+            txtvalor1.selectAll();
+        } else {
+            v1 = Double.parseDouble(txtvalor1.getText());
+
+            if (v1 == 0) {
+                JOptionPane.showMessageDialog(this, "Tiene que tener mas de un año en la empresa", "Error", JOptionPane.ERROR_MESSAGE);
+                txtvalor1.requestFocusInWindow();
+                txtvalor1.selectAll();
+            } else {
+
+                op = ((v1 - 1) * 120000) + 100000;
+
+                txtresultado.setText(String.valueOf(op));
+            }
+        }
     }//GEN-LAST:event_cmdcalcularActionPerformed
 
     private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
-       txtvalor1.setText("");
-       txtresultado.setText("");
-       
-       txtvalor1.requestFocusInWindow();
-       
+        txtvalor1.setText("");
+        txtresultado.setText("");
+
+        txtvalor1.requestFocusInWindow();
+
     }//GEN-LAST:event_cmdborrarActionPerformed
+
+    private void txtvalor1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor1KeyTyped
+        char c=evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtvalor1KeyTyped
 
     /**
      * @param args the command line arguments
